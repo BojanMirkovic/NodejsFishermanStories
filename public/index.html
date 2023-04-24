@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<!-- Setting the <meta> viewport to make your website look good on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisherman Stories-Discover Your New Fishing Spot</title>
+<!--Link to an external style sheet: 
+    rel=stylesheet Required. Specifies the relationship between the current document and 
+    the linked document
+href= Specifies the location of the linked document-->    
+    <link rel="stylesheet" href="style.css">
+    <!--We are adding font type(<link>) from fonts.google.com,fonts that we want to use -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<!--We are adding icon for the small screen menu,fontawsome.com-->
+
+<script src="https://kit.fontawesome.com/b7505c27fc.js" crossorigin="anonymous"></script>
+
+    <body>
+        <!--The <section> tag defines a section in a document.-->
+    <section class="header">
+        <!--The <nav> tag defines a set of navigation links. navigation menu like (home,about...)-->
+        <nav>
+              <!--The <a> tag defines a hyperlink, which is used to link from one page to another.
+                The most important attribute of the <a> element is the href attribute,
+                which indicates the link's destination.-->
+             <!--The <img> tag is used to embed an image in an HTML page.src - Specifies the path to the image-->
+            <a href="index.html"><img src="images/LogoFisherman.png"></a>
+             <!--The <div> tag is used as a container for HTML elements -
+               which is then styled with CSS or manipulated with JavaScript.
+               The <div> tag is easily styled by using the class or id attribute.-->
+            <div class="nav-links" id="navLinks">
+                <!--Adding the small screen clousing icon,(link from awsome fonts iscons)-->
+                <!--we have to add onclick event becouse we have to create event an hide menu-->
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+             
+              <!--The <ul> tag defines an unordered (bulleted) list.
+               We use the <ul> tag together with the <li> tag to create unordered lists.-->
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">LAKES</a></li>
+                    <li><a href="">FISHING GEAR</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <!--before </nav> we have to add menue icon for small screen (link from awsome fonts icons)-->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Fisherman Stories</h1>
+            <p>"Even a bad day of fishing is better than a god day at work" <br> We share our secrets with you.</p>
+            <!--we want to make this link to look like buton,thats why we are adding class so we can modify the look-->
+            <a href="" class ="hero-btn">Discover Your Dream Spot</a>
+        </div>
+
+    </section>
+    <!--create javaScrept function for showing and hiding Menu in small screen mode-->
+    <script>
+      var navLinks=document.getElementById("navLinks");
+      function showMenu(){
+        navLinks.style.right="0";
+      }
+      function hideMenu(){
+        navLinks.style.right="-200px";
+      }
+    </script>
+    </body>
+</html>

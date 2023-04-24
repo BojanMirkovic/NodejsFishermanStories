@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*After vi adding new type of font in HTML we have to do it in CSS also*/
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+min-height: 100vh;
+width: 100%;
+background-image:url(images/Lake.jpg);
+background-position:center;
+background-size: cover;
+position: relative;
+}
+nav{
+    display: flex;
+    padding: 1% 1%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 80px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+/*nav.menu CSS,hear we style the look of our menu(HOME,ABOUT...*/
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #253439;
+    text-decoration: none;
+    font-size: 14px;
+}
+/* Now we want to add some effects(red line under the navigation menu for exampel HOME)*/
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;/* 0% value is set because we want to hide RED LINE, not to be visible
+               (shows only when we hover over navigation menu name(HOME...)*/
+    height: 2px; /*height of RED LINE*/    
+    background: #f44336;/*colour of the line*/
+    display: block;
+    margin: auto;
+    transition: 0.5s; /*transition time, RED LINE showing speed*/
+}
+/*now we to show efFect*/
+.nav-links ul li:hover::after{
+    width: 100%; /* 100% value is set because we want to RED LINE shows when we hover over navigation menu name(HOME...)*/
+}
+/*place the <h1>Fisherman stories in the center and <p>*/
+.text-box{
+    width: 90%;
+    color: #253439;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align:right;
+}
+.text-box h1{
+    font-size: 60px;
+}
+.text-box p{
+    font-size: 14px;
+    margin:75px 0 20px;
+    color: #253439; 
+}
+/*we creating button look for this class*/
+.hero-btn{
+    display:inline-block;
+    text-decoration: none;
+    color: #253439;
+    border: 1px solid #253439;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+/* we are hiding HTML small screen icons(clouse,menu) so thay are visible 
+only in small screen mode*/
+nav .fa{
+    display: none;
+}
+/*Now we have to adjust all elements for the small screen(mobile or tablet users)
+for adjustment we use @media*/
+@media(max-width: 700px){ /*max-width: value is to show maximum screen size*/
+    .text-box{
+        top:32%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .text-box h1{
+        
+        font-size: 20px; /*size of main titel*/
+    }
+    .text-box p{
+        font-size: 15px;
+        margin:10px 0 45px;
+        color: #253439; 
+    }
+    /* CSS nav. menue for small screen*/
+.nav-links ul li {
+    display: block;
+    
+}
+.nav-links ul li a{
+    color: #fff; /*we change color of menu items(HOME;ABOUT...)*/
+}
+.nav-links{
+    position:absolute;
+    background:#253439;
+    height: 100vh;
+    width: 200px;
+    top:0;
+    right: -200px;/*becouse width value is set to 200px,
+    when we set value right: -200px we are hiding menu from screen*/
+    text-align: left;
+    z-index: 2;
+    transition: 1s;
+
+}
+/*style the icon*/
+nav .fa{
+    display: block; /* block value is making icon visible in small screen mode*/
+    
+    margin: 10px; /*icon position from the corner*/
+    font-size: 22px; /*icon size*/
+    cursor: pointer;
+}
+ .fa-bars{color:#253439;} /*icon color*/
+ .fa-times{color: #fff;}
+.nav-links ul{
+    padding: 30px;
+}
+
+}

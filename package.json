@@ -1,0 +1,20 @@
+{
+  "name": "nodejsfishermanstories",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "author": "Bojan Mirkovic",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "mime": "^3.0.0",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7"
+  }
+}
