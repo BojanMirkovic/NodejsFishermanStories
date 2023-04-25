@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const mime = require('mime');
+const port = 5000;
 
 const server = http.createServer((req, res) => {
   console.log(`Request for ${req.url} received.`);
@@ -47,7 +48,7 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(5050, () => {
-  console.log('Server listening on port ');
+server.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
 });
 
