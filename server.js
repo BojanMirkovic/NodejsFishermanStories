@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const mime = require('mime');
-const port = 5000;
+const port = 5500;
 
 const server = http.createServer((req, res) => {
   console.log(`Request for ${req.url} received.`);
@@ -26,6 +26,9 @@ const server = http.createServer((req, res) => {
         res.end('Internal Server Error');
         return;
       }
+
+      
+
       res.setHeader('Content-Type', 'text/html');
       res.end(data);
     });
