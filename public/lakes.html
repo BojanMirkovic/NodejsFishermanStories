@@ -21,7 +21,7 @@ href= Specifies the location of the linked document-->
 
     <body>
         <!--The <section> tag defines a section in a document.-->
-    <section class="header">
+    <section class="sub-header">
         <!--The <nav> tag defines a set of navigation links. navigation menu like (home,about...)-->
         <nav>
               <!--The <a> tag defines a hyperlink, which is used to link from one page to another.
@@ -51,42 +51,12 @@ href= Specifies the location of the linked document-->
             <!--before </nav> we have to add menue icon for small screen (link from awsome fonts icons)-->
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
-        <div class="text-box">
-            <h1>Fisherman Stories</h1>
-            <p>"Even a bad day of fishing is better than a god day at work" <br> We share our secrets with you.</p>
-            <!--we want to make this link to look like buton,thats why we are adding class so we can modify the look-->
-            <a href="lakes.html" class ="hero-btn">Discover Your Dream Spot</a>
-        </div>
+        <h1>Lakes</h1>
 
     </section>
-    <!------- Lakes We Like Section ----------->
-    <section class="lakes">
-        <h1>Lakes We Like </h1>
-        <p>Fisherman Stories invites you to explore some of the best lakes in Sweden</p>
-    
-     <div class="row">
-        <div class="lake-col">
-            <h3>Lake Mjörn</h3>
-            <p>
-                Welcome to lake Mjörn! Lake with rich zander stock and perfect location. Mjörn is definitely the best lake in Gothenburg surroundings.
-                The lake is a small inland sea with averige depth of 20m. Mjörn is a stream lake,with many islands that gives the impression of being an archipelago. One of the islands, Risön, is a nature reserve.Mjörn with its varied landscape provides a nice natural experience and enjoyment for both body and soul.</p>
-        </div>
-        <div class="lake-col">
-            <h3>Lake Fegen</h3>
-            <p>Lake Fegen is located right in the midel where the regions of Halland, Småland and Västergötland meet.
-                Lake Fegen,offers shallow bays, great depths, narrow bays, large open "floars", many islands, smooth rock outcrops and wonderful sandy beaches with no less than 17 different species of fish.
-                Lake is unique in the world for the spring-spawning grayling,interesting birdlife.This is the lake with the good water quality which is now become a nature reserve and home to many wild animals.</p>
-        </div>
-        <div class="lake-col">
-            <h3>Lake Ralången</h3>
-            <p>One of Småland's best zander waters, Ralången is known for good zander fishing and especially for record-breaking individuals. Pike fishing in Ralången is also good. Angling competitions are organized in the lake where very large catches of especially roach and bream are usually noted.
 
-                Ralången is part of the Svartån catchment area and is located 4 kilometers north of Aneby.</p>
-        </div>
-     </div>
-
-    </section >
-    <!------- Favorite Lakes Section ----------->
+    <!-- Lakes Content -->
+     <!------- Favorite Lakes Section ----------->
      <section class="natureReserve"> 
         <h1>Our Favorite Lakes</h1>
         <p> <p>Fisherman Stories invites you to explore some of the best lakes in Sweden</p></p>
@@ -113,6 +83,33 @@ href= Specifies the location of the linked document-->
             
         </div>
     </section>
+     <!------- Lakes We Like Section ----------->
+     <section class="lakes">
+        <h1>Lakes We Like </h1>
+        <p>Fisherman Stories invites you to explore some of the best lakes in Sweden</p>
+    
+     <div class="row">
+        <div class="lake-col">
+            <h3>Lake Mjörn</h3>
+            <p>
+                Welcome to lake Mjörn! Lake with rich zander stock and perfect location. Mjörn is definitely the best lake in Gothenburg surroundings.
+                The lake is a small inland sea with averige depth of 20m. Mjörn is a stream lake,with many islands that gives the impression of being an archipelago. One of the islands, Risön, is a nature reserve.Mjörn with its varied landscape provides a nice natural experience and enjoyment for both body and soul.</p>
+        </div>
+        <div class="lake-col">
+            <h3>Lake Fegen</h3>
+            <p>Lake Fegen is located right in the midel where the regions of Halland, Småland and Västergötland meet.
+                Lake Fegen,offers shallow bays, great depths, narrow bays, large open "floars", many islands, smooth rock outcrops and wonderful sandy beaches with no less than 17 different species of fish.
+                Lake is unique in the world for the spring-spawning grayling,interesting birdlife.This is the lake with the good water quality which is now become a nature reserve and home to many wild animals.</p>
+        </div>
+        <div class="lake-col">
+            <h3>Lake Ralången</h3>
+            <p>One of Småland's best zander waters, Ralången is known for good zander fishing and especially for record-breaking individuals. Pike fishing in Ralången is also good. Angling competitions are organized in the lake where very large catches of especially roach and bream are usually noted.
+
+                Ralången is part of the Svartån catchment area and is located 4 kilometers north of Aneby.</p>
+        </div>
+     </div>
+
+    </section >
 
     <!-- Fisherman Stories Records -->
     <section class="fishermanStoriesRecords">
@@ -145,18 +142,11 @@ href= Specifies the location of the linked document-->
             </div>
        </div>
     </section>
-
-    <!-- Call to Action Section create Direction to CONTACT part -->
-    <section class="cta">
-        <h1>Discover Where Virgin Nature Meets Bold Fishes</h1>
-        <a href="contact.html" class="hero-btn2">CONTACT US</a>
-
-    </section>
-
+   
     <!-- Footer Section -->
     <footer class="footer">
         <h4>About Us</h4>
-        <p>You Can Find Us On All Socila Media<br>We Are Present Everywhere </p>
+        <p>You Can Find Us On All Socila Media, We Are Present Everywhere </p>
         <div class="icons"> 
             <i class="fa fa-facebook"></i>
             <i class="fa fa-twitter"></i>
@@ -164,7 +154,6 @@ href= Specifies the location of the linked document-->
         </div>
         <p>Made with<i class="fa fa-heart-o"></i>by Bojan Mirkovic </p>
     </footer>
-    
 
     <!--create javaScrept function for showing and hiding Menu in small screen mode-->
     <script src="smallScreenMenuScript.js">

@@ -51,31 +51,56 @@ href= Specifies the location of the linked document-->
             <!--before </nav> we have to add menue icon for small screen (link from awsome fonts icons)-->
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
-        <h1>About Us</h1>
+        <h1>Contact Us</h1>
 
     </section>
 
-    <!-- About Us Content -->
-    <section class="about-us">
+    <!-- Contact Us Content -->
+    <section class="location">
+        <!--adding a HTML content from googel maps to show where are we located -->
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17029.237166878007!2d12.926212222848127!3d57.756287930900285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465aa0b04bdcfeed%3A0x7c327e8fc1abfa59!2zQm9yw6Vz!5e0!3m2!1sen!2sse!4v1682779227764!5m2!1sen!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+           <!--creating icons on the left side -->
+    <section class="contact-us">
         <div class="row">
-            <div class="about-col">
-                <h1>Fishing guide in Sweden</h1>
-                <p>Explore the Swedish wild waters with Fisherman Stories!<br>
-                    We are located in Borås and we cover all lakes and rivers in Västra Götland. Your guide and host for the day is Captain Bojan, who’s been fishing in the area for over 25 years.<br>
-                    Besides being an avid fisherman, he’s also a published photographer, so you can count on some amazing photos as well.<br>
-                    It all starts when you come aboard a Plastimo P340H boat. To make the most out of this small vessel, the capacity is limited to only 1 guest. You will have the captain’s full attention and all the fish to yourselv. The boat features Hummingbird navigational electronics and MinnKota wireless engine.<br>
-                    During your lake adventure, you’ll mainly target Zander, Northern Pike, and Perch. There’s lots of fishing techniques to choose from and it all depends on what you are trying to catch and how hard you want to push yourself. You get to keep the catch, unless they are big Pike and Perch specimens.<br>
-                    While your equipment is included in the price, you’ll need to prepare your fishing licenses, snacks, and drinks for the day.<br>Spend a relaxing day in untamed nature with Fisherman Stories!<br>Anglers of all skill levels are welcome to join.
-                    </p>
-                   <p style="font-weight: 600;">Never Forget! "Even a bad day of fishing is better than a god day at work" <br> We share our secrets with you.</p>
+             <!--create col No.1-->
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-home"></i>
+                <span>
+                    <h5>Nora Sjöbogatan 21, Borås</h5>
+                    <p>Monday to Friday, 10AM to 6PM</p>
+                </span>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                <span>
+                    <h5>+46 73 9896003</h5>
+                    <p>Monday to Friday, 10AM to 6PM</p>
+                </span>
+                </div>
+                <div><i class="fa fa-envelope-o"></i>
+                    <span>
+                        <h5>fishermanstories@yahoo.com</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+
             </div>
-            
-            <div class="about-col">
-                <img src="images/about1.jpg">
-                <a href="price.html" class="hero-btn" style="margin-top: 45px;">EXPLORE NOW</a>
+            <!--create col No.2-->
+            <!-- Creating input form,in form action we are writing php file location and method-->
+            <div class="contact-col">
+                <form action="form-handler.php" method="post">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" placeholder="Enter email address" required>
+                    <input type="text" name="subject" placeholder="Enter your subject" required>
+                    <textarea rows="8" name="message" placeholder="Message" required></textarea>
+                    <button class="hero-btn">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
+   
    
    
     <!-- Footer Section -->

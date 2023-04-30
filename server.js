@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const mime = require('mime');
-const port = 5500;
+const port = 5555;
 
 const server = http.createServer((req, res) => {
   console.log(`Request for ${req.url} received.`);

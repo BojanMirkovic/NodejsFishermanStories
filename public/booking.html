@@ -51,31 +51,42 @@ href= Specifies the location of the linked document-->
             <!--before </nav> we have to add menue icon for small screen (link from awsome fonts icons)-->
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
-        <h1>About Us</h1>
+        <h1>Start Your Adventure</h1>
 
     </section>
 
-    <!-- About Us Content -->
-    <section class="about-us">
+    <!-- Booking Content -->
+    <section class="booking">
+        <h1>Book a Guide</h1>
+        <p>Fisherman Stories invites you to explore some of the best lakes in Sweden</p>
+    
         <div class="row">
-            <div class="about-col">
-                <h1>Fishing guide in Sweden</h1>
-                <p>Explore the Swedish wild waters with Fisherman Stories!<br>
-                    We are located in Borås and we cover all lakes and rivers in Västra Götland. Your guide and host for the day is Captain Bojan, who’s been fishing in the area for over 25 years.<br>
-                    Besides being an avid fisherman, he’s also a published photographer, so you can count on some amazing photos as well.<br>
-                    It all starts when you come aboard a Plastimo P340H boat. To make the most out of this small vessel, the capacity is limited to only 1 guest. You will have the captain’s full attention and all the fish to yourselv. The boat features Hummingbird navigational electronics and MinnKota wireless engine.<br>
-                    During your lake adventure, you’ll mainly target Zander, Northern Pike, and Perch. There’s lots of fishing techniques to choose from and it all depends on what you are trying to catch and how hard you want to push yourself. You get to keep the catch, unless they are big Pike and Perch specimens.<br>
-                    While your equipment is included in the price, you’ll need to prepare your fishing licenses, snacks, and drinks for the day.<br>Spend a relaxing day in untamed nature with Fisherman Stories!<br>Anglers of all skill levels are welcome to join.
-                    </p>
-                   <p style="font-weight: 600;">Never Forget! "Even a bad day of fishing is better than a god day at work" <br> We share our secrets with you.</p>
+            <div class="booking-col">
+                <form action="">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="date" id="date" required>
+                    <textarea rows="1" id="message" placeholder="Message"></textarea>
+                    <button class="hero-btn" id="book-btn">Book Now</button>
+                </form>
             </div>
-            
-            <div class="about-col">
-                <img src="images/about1.jpg">
-                <a href="price.html" class="hero-btn" style="margin-top: 45px;">EXPLORE NOW</a>
+
+            <div class="booking-col">
+                <form action="">
+                    <input type="number" id="bookingNumber" placeholder="Booking Id No." required>
+                    <input type="name" id="name" placeholder="Name" required>
+                    <input type="date" id="date" required>
+                    <input type="email" placeholder="Email" required>
+                    <button class="hero-btn" id="update-btn">Update Booking</button>
+                    <button class="hero-btn" id="delete-btn" style="padding: 12px 37px;">Delete Booking</button>
+                </form>
             </div>
         </div>
     </section>
+
+
+    
+    
    
    
     <!-- Footer Section -->
