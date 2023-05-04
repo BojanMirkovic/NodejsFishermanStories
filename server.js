@@ -1,57 +1,107 @@
-const http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
 const fs = require('fs');
-const path = require('path');
-const mime = require('mime');
-const port = 5555;
 
-const server = http.createServer((req, res) => {
-  console.log(`Request for ${req.url} received.`);
+const app = express();
 
-  // Set MIME type for css files
-  if (req.url.endsWith('.css')) {
-    res.setHeader('Content-Type', 'text/css');
-  }
+app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-  // Set MIME type for javascript files
-  if (req.url.endsWith('.js')) {
-    res.setHeader('Content-Type', 'text/javascript');
-  }
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
 
-  // Serve index.html file
-  if (req.url === '/') {
-    fs.readFile('./public/index.html', (err, data) => {
-      if (err) {
-        console.error(err);
-        res.statusCode = 500;
-        res.end('Internal Server Error');
-        return;
-      }
-
-      
-
-      res.setHeader('Content-Type', 'text/html');
-      res.end(data);
+app.post('/submit-form', (req, res) => {
+    const formData = req.body;
+    console.log(formData);
+    
+    fs.readFile('booking.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Internal server error');
+            return;
+        }
+        
+        let jsonData = [];
+        
+        if (data) {
+            jsonData = JSON.parse(data);
+        }
+        
+        jsonData.push(formData);
+        
+        fs.writeFile('booking.json', JSON.stringify(jsonData), (err) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Internal server error');
+                return;
+            }
+            
+            res.send('Form data saved successfully');
+        });
     });
-    return;
-  }
+});
 
-  // Serve other static files
-  const filePath = path.join(__dirname, 'public', req.url);
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      console.error(err);
-      res.statusCode = 404;
-      res.end('File not found');
-      return;
-    }
+//Here, we have added a new route for handling DELETE requests
+app.delete('/delete-form/:id', (req, res) => {
+  const userId = req.params.id;
 
-    const mimeType = mime.getType(filePath);
-    res.setHeader('Content-Type', mimeType);
-    res.end(data);
+  // read the existing data from the file
+  fs.readFile('booking.json', (err, data) => {
+      if (err) {
+          console.log(err);
+          res.status(500).send('Internal server error');
+      } else {
+          const jsonData = JSON.parse(data);
+
+          // find the form data with the given user ID
+          const userIndex = jsonData.findIndex(user => user.id == userId);
+
+          if (userIndex === -1) {
+              // user ID not found in the data array
+              res.status(404).send('User not found');
+          } else {
+              // remove the form data for the user with the given ID
+              const deletedUser = jsonData.splice(userIndex, 1)[0];
+
+              // write the updated data back to the file
+              fs.writeFile('booking.json', JSON.stringify(jsonData), (err) => {
+                  if (err) {
+                      console.log(err);
+                      res.status(500).send('Internal server error');
+                  } else {
+                      res.send(`Form data for user ${deletedUser.name} (ID: ${deletedUser.id}) deleted successfully`);
+                  }
+              });
+          }
+      }
   });
 });
 
-server.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+//Load data from booking.json
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.get('/data', (req, res) => {
+  fs.readFile('booking.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Internal server error');
+      return;
+    }
+
+    res.json(JSON.parse(data));
+  });
+});
+
+
+
+//Seting the Server listener
+const port = 4000;
+
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
 });
 

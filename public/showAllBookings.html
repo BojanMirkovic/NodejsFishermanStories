@@ -51,42 +51,31 @@ href= Specifies the location of the linked document-->
             <!--before </nav> we have to add menue icon for small screen (link from awsome fonts icons)-->
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
-        <h1>Start Your Adventure</h1>
+        <h1>Booking List</h1>
 
     </section>
 
-    <!-- Booking Content -->
+    <!-- Show All Bookings Content -->
     <section class="booking">
-        <h1>Book a Guide</h1>
+        <h1>Show All Bookings</h1>
         <p>Fisherman Stories invites you to explore some of the best lakes in Sweden</p>
-    
-        <div class="row">
-            <div class="booking-col">
-                <form id="input-form">
-                    <h2>Booking form</h2>
-                    <input type="text" id="name" placeholder="Name" required>
-                    <input type="email" id="email" placeholder="Email" required>
-                    <input type="date" id="date" required>
-                    <textarea rows="1" id="message" placeholder="Message"></textarea>
-                    <button type="submit" class="hero-btn" id="send-btn">Book Now</button>
-                    
-                </form>
-            </div>
+        <body >
+            <button class="hero-btn" onclick="displayData()">Display Data</button>
+            <table  id="data-table" class="data-table" style="margin-left: auto;margin-right: auto;">
 
-            <div class="booking-col">
+                
 
-                <form id="delete-form">
-                    <h2>Cancel/Delete </h2>
-                    <input type="number" id="booking-id" placeholder="Booking Id No." required>
 
-                   
-                    <button type="submit" class="hero-btn" id="delete-btn" style="padding: 12px 43px;margin: 30px;">Delete Booking</button>
-                    <a href="showAllBookings.html" class="hero-btn">Show All Bookings</a>
-                   
-                </form>
-            </div>
-        </div>
+            </table>
+
+           
+           
+        </body>
+            
+        
+        
     </section>
+    
 
 
     
@@ -108,7 +97,7 @@ href= Specifies the location of the linked document-->
     <!--create javaScrept function for showing and hiding Menu in small screen mode-->
     <script src="smallScreenMenuScript.js"></script>
      <script src="../server.js"></script>
-     <script src="booking.js"></script>
+     <script src="booking.js" defer></script>
      
     </body>
 </html>

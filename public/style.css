@@ -550,3 +550,10 @@ h2{
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+/*------------ Show All Bookings page --------------*/
+
+.data-tabel ,th,td{
+   
+    border: 1px solid;
+    background: #fff3f3;
+}
